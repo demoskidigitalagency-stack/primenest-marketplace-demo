@@ -4,27 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PrimeNest Marketplace</title>
-<style>
-body{margin:0;font-family:system-ui;background:#f7f8fa;color:#111827;display:grid;place-items:center;min-height:100vh}
-.loader{padding:24px;text-align:center}
-.spinner{width:36px;height:36px;border:4px solid #d9ece8;border-top-color:#0b6e5d;border-radius:50%;margin:0 auto 14px;animation:r .8s linear infinite}
-@keyframes r{to{transform:rotate(360deg)}}
-</style>
+<style>body{margin:0;font-family:system-ui;background:#f6f8f7;color:#18211d;display:grid;place-items:center;min-height:100vh}.loader{text-align:center;padding:24px}.spinner{width:38px;height:38px;border:4px solid #d7ebe5;border-top-color:#0b6e5d;border-radius:50%;margin:0 auto 14px;animation:r .8s linear infinite}@keyframes r{to{transform:rotate(360deg)}}</style>
 </head>
 <body>
-<div class="loader"><div class="spinner"></div><strong>Loading PrimeNest Marketplace…</strong></div>
+<div class="loader"><div class="spinner"></div><strong>Opening PrimeNest Marketplace…</strong></div>
 <script type="module">
-import p1 from "./payload/part-01.js";
-import p2 from "./payload/part-02.js";
-import p3 from "./payload/part-03.js";
-import p4 from "./payload/part-04.js";
-import p5 from "./payload/part-05.js";
-import p6 from "./payload/part-06.js";
-import p7 from "./payload/part-07.js";
-const b=[p1,p2,p3,p4,p5,p6,p7].join("");
-const bytes=Uint8Array.from(atob(b),c=>c.charCodeAt(0));
-const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
-const html=await new Response(stream).text();
+import p1 from './payload/part-01.js';
+import p2 from './payload/part-02.js';
+import p3 from './payload/part-03.js';
+import p4 from './payload/part-04.js';
+import p5 from './payload/part-05.js';
+import p6 from './payload/part-06.js';
+import p7 from './payload/part-07.js';
+const html=[p1,p2,p3,p4,p5,p6,p7].join('');
 document.open();document.write(html);document.close();
 </script>
 </body>
